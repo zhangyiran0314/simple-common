@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+	  <groupId>chenyee.common</groupId>
+	  <artifactId>chenyee-common</artifactId>
+	  <version>1.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>chenyee-common-service</artifactId>
+  <name>chenyee-common-service</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+  
+  	<dependency>
+  		<groupId>chenyee.common</groupId>
+  		<artifactId>chenyee-common-core</artifactId>
+  		 <version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	
+	     <dependency> 
+		        <groupId>org.springframework.boot</groupId>
+		        <artifactId>spring-boot-starter</artifactId>
+		        <exclusions>
+	            <exclusion>
+	                <groupId>org.springframework.boot</groupId>
+	                <artifactId>spring-boot-starter-logging</artifactId>
+	            </exclusion>
+            </exclusions>
+	     </dependency>
+	     <!-- 动态数据源获取依赖 -->
+		<dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+        
+   		<!-- mysql连接 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!-- 数据源 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+		<dependency>  
+		    <groupId>org.springframework.boot</groupId>  
+		    <artifactId>spring-boot-starter-redis</artifactId>  
+		</dependency>
+        
+         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+		<!-- <dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency> -->
+        
+        <!--分页插件-->
+	    <dependency>
+	        <groupId>com.github.pagehelper</groupId>
+	        <artifactId>pagehelper</artifactId>
+	    </dependency>
+        <!-- duboo start -->
+ 		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+		</dependency>
+		<dependency>  
+		    <groupId>org.apache.zookeeper</groupId>  
+		    <artifactId>zookeeper</artifactId>  
+		</dependency> 
+		<dependency>
+			<groupId>com.101tec</groupId>
+			<artifactId>zkclient</artifactId>
+		</dependency> 
+	   <!-- dubbo end -->
+        
+  </dependencies>
+</project>

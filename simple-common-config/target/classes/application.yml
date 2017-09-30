@@ -1,0 +1,60 @@
+spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        #读写分离主库master
+        master: 
+          url: jdbc:mysql://18.8.7.161:3306/salestrack?useUnicode=true&characterEncoding=UTF-8
+          username: root
+          password: Changeme
+          driver-class-name: com.mysql.jdbc.Driver
+          filters: stat
+          maxActive: 20
+          initialSize: 1
+          maxWait: 60000
+          minIdle: 1
+          timeBetweenEvictionRunsMillis: 60000
+          minEvictableIdleTimeMillis: 300000
+          validationQuery: select 'x'
+          testWhileIdle: true
+          testOnBorrow: false
+          testOnReturn: false
+          poolPreparedStatements: true
+          maxOpenPreparedStatements: 20
+        #读写分离从库slave
+        slave: 
+          url: jdbc:mysql://localhost:3306/salestrack?useUnicode=true&characterEncoding=UTF-8
+          username: root
+          password: 
+          driver-class-name: com.mysql.jdbc.Driver
+          filters: stat
+          maxActive: 20
+          initialSize: 1
+          maxWait: 60000
+          minIdle: 1
+          timeBetweenEvictionRunsMillis: 60000
+          minEvictableIdleTimeMillis: 300000
+          validationQuery: select 'x'
+          testWhileIdle: true
+          testOnBorrow: false
+          testOnReturn: false
+          poolPreparedStatements: true
+          maxOpenPreparedStatements: 20
+    #redis配置信息
+    redis: 
+       host : 18.8.7.161
+       port : 6379
+       max-idle : 8
+       min-idle : 0
+#配置文件相关目录
+upload:
+    filePath: D:/data/attendanceSystem/
+    
+#配置是否重复请求收集与过滤
+repetition:
+    #是否开启重复数据收集
+    collect: true
+    #是否开启过滤,预定义
+    filter: true
+        
+
+
